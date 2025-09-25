@@ -1,6 +1,6 @@
 const http = require('http');
 
-const osoby = []; // tablica przechowująca imiona i nazwiska
+const osoby = [];
 
 const server = http.createServer((req, res) => {
   if (req.method === 'GET') {
@@ -31,10 +31,10 @@ const server = http.createServer((req, res) => {
       const nazwisko = params.get('nazwisko');
 
       if (imie && nazwisko) {
-        osoby.push({ imie, nazwisko }); // dodajemy obiekt do tablicy
+        osoby.push({ imie, nazwisko }); 
       }
 
-      // przekierowanie z powrotem na stronę główną
+
       res.writeHead(302, { Location: '/' });
       res.end();
     });
